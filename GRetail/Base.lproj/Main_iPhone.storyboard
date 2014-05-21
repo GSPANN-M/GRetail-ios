@@ -52,10 +52,16 @@
                                     <outlet property="delegate" destination="QUB-2U-INy" id="voE-6M-Vq3"/>
                                 </connections>
                             </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Y04-8O-LdA">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.26274509800000001" green="0.46274509800000002" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="Y04-8O-LdA" id="Ctn-hi-z1g"/>
                         <outlet property="webViewForCommunicationURL" destination="4o6-Ia-aJc" id="s77-fZ-K44"/>
                     </connections>
                 </viewController>

@@ -96,17 +96,13 @@
 
 -(void) handleLocalNotifications : (NSNotification *)notification{
     
-    
-    
     UILocalNotification *notificationObject = [[notification userInfo] objectForKey:@"userInfo"];
     NSArray *notificationBodyParts = [notificationObject.alertBody componentsSeparatedByString:@"\n"];
-    NSLog(@"notification parts:%@", notificationBodyParts);
     self.urlToOpen = [notificationBodyParts objectAtIndex:1];
-    NSLog(@"URL TO open:%@", self.urlToOpen);
-    UIApplicationState state = [[UIApplication sharedApplication] applicationState];
+    //UIApplicationState state = [[UIApplication sharedApplication] applicationState];
     //if (state == UIApplicationStateActive) {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:notificationObject.alertAction
-                                                    message:notificationObject.alertBody
+                                                    message:[notificationBodyParts objectAtIndex:0]
                                                    delegate:self cancelButtonTitle:@"OK"
                                           otherButtonTitles:@"Goto Link", nil];
     [alert show];
@@ -119,18 +115,12 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"Inside alert callback");
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     
     if([title isEqualToString:@"Goto Link"])
     {
-        NSLog(@"Inside alert callback:%@",self.urlToOpen);
-        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.urlToOpen]];
         WebViewController* objWebVC = [[UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil] instantiateViewControllerWithIdentifier:@"WebViewController"];
         [objWebVC setUrlforWebView:[NSURL URLWithString:self.urlToOpen]];
-        
-        //objWebVC.urlforWebView=[NSURL URLWithString:self.urlToOpen];
-        NSLog(@"Inside alert callback 2:%@",[objWebVC urlforWebView]);
         [self.navigationController pushViewController:objWebVC animated:YES];
     }
 }

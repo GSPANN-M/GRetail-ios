@@ -105,8 +105,6 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-//    HomeViewController *rootViewController = (HomeViewController*)self.window.rootViewController;
-//    [rootViewController handleLocalNotifications:notification];
     NSDictionary *userInfo = [NSDictionary dictionaryWithObject:notification forKey:@"userInfo"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"handleLocalNotifications" object:Nil userInfo:userInfo];
 }

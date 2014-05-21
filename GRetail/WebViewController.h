@@ -12,5 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webViewForCommunicationURL;
 @property (retain, nonatomic) NSURL *urlforWebView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+
 
 @end

@@ -16,6 +16,7 @@
 
 @synthesize webViewForCommunicationURL;
 @synthesize urlforWebView;
+@synthesize activityIndicatorView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,9 +31,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //self.webViewForCommunicationURL = [[UIWebView alloc]init];
+    
     self.webViewForCommunicationURL.delegate = self;
-    NSLog(@"URL TO LOAD:%@", self.urlforWebView);
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:self.urlforWebView];
     [self.webViewForCommunicationURL loadRequest:urlRequest];
 }
@@ -56,10 +56,12 @@
 
 -(void) webViewDidStartLoad:(UIWebView *)webView{
     
+    [self.activityIndicatorView startAnimating];
 }
 
 -(void) webViewDidFinishLoad:(UIWebView *)webView{
     
+    [self.activityIndicatorView stopAnimating];
 }
 
 -(void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
