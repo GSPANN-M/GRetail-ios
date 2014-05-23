@@ -11,6 +11,7 @@
 #import <ContextLocation/QLPlaceEvent.h>
 #import <ContextLocation/QLPlace.h>
 #import <ContextCore/QLPushNotificationsConnector.h>
+#import <FYX/FYXLogging.h>
 #import "HomeViewController.h"
 
 @implementation AppDelegate
@@ -19,6 +20,7 @@
 {
     // Override point for customization after application launch.
     [FYX setAppId:@"c7306011981e8ddf043c74571d2368554c30e72c3e6c442e478a47785a4817b6" appSecret:@"dc6bf16bbd09701ae368e5258c3a1a883dfe84e89b28a05802261f280574fdf3" callbackUrl:@"comgspanngretail://authcode"];
+    [FYXLogging setLogLevel:FYX_LOG_LEVEL_INFO];
     //[FYX startServiceAndAuthorizeWithViewController:self.window.rootViewController delegate:self];
     [FYX startService:self];
     

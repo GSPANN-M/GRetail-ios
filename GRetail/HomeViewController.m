@@ -55,7 +55,7 @@
         
         if (communicationContent) {
             
-            if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
+            //if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
                 
                 UILocalNotification *localNotification = [[UILocalNotification alloc] init];
                 localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval:5];
@@ -67,7 +67,7 @@
                 // Request to reload table view data
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
             }
-        }
+//        }
     } failure:^(NSError *error) {
         // Failed to retrieve content
         NSLog(@"error is this:%@", error);
@@ -77,7 +77,7 @@
 - (void)receivedSighting:(FYXVisit *)visit updateTime:(NSDate *)updateTime RSSI:(NSNumber *)RSSI;
 {
     // this will be invoked when an authorized transmitter is sighted during an on-going visit
-    NSLog(@"I received a sighting!!! %@", visit.transmitter.name);
+    //NSLog(@"I received a sighting!!! %@", visit.transmitter.name);
 }
 
 - (void)didDepart:(FYXVisit *)visit;
@@ -96,6 +96,10 @@
 
 -(void) handleLocalNotifications : (NSNotification *)notification{
     
+    if([UIApplication sharedApplication].enabledRemoteNotificationTypes  == UIRemoteNotificationTypeAlert){
+        NSLog(@"Inside test notification types");
+    }
+    else{
     UILocalNotification *notificationObject = [[notification userInfo] objectForKey:@"userInfo"];
     NSArray *notificationBodyParts = [notificationObject.alertBody componentsSeparatedByString:@"\n"];
     self.urlToOpen = [notificationBodyParts objectAtIndex:1];
@@ -111,6 +115,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
     
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
