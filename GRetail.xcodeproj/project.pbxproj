@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D04BD924192B9C3300F30330 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04BD923192B9C3300F30330 /* WebViewController.m */; };
+		D06BB541192F7A1A0045BAF3 /* BeaconDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D06BB540192F7A1A0045BAF3 /* BeaconDetailsTableViewCell.m */; };
+		D06BB548192F7D050045BAF3 /* Beacon1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D06BB545192F7D050045BAF3 /* Beacon1.jpg */; };
+		D06BB549192F7D050045BAF3 /* Beacon2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D06BB546192F7D050045BAF3 /* Beacon2.jpg */; };
+		D06BB54A192F7D050045BAF3 /* Beacon3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D06BB547192F7D050045BAF3 /* Beacon3.jpg */; };
+		D06BB54C192F7EFE0045BAF3 /* avatar_01.png in Resources */ = {isa = PBXBuildFile; fileRef = D06BB54B192F7EFE0045BAF3 /* avatar_01.png */; };
+		D06BB54F192F82230045BAF3 /* Beacon.m in Sources */ = {isa = PBXBuildFile; fileRef = D06BB54E192F82230045BAF3 /* Beacon.m */; };
 		D06DBD751922119600C84628 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06DBD741922119600C84628 /* Foundation.framework */; };
 		D06DBD771922119600C84628 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06DBD761922119600C84628 /* CoreGraphics.framework */; };
 		D06DBD791922119600C84628 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06DBD781922119600C84628 /* UIKit.framework */; };
@@ -64,6 +70,14 @@
 /* Begin PBXFileReference section */
 		D04BD922192B9C3300F30330 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		D04BD923192B9C3300F30330 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		D06BB53F192F7A1A0045BAF3 /* BeaconDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconDetailsTableViewCell.h; sourceTree = "<group>"; };
+		D06BB540192F7A1A0045BAF3 /* BeaconDetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconDetailsTableViewCell.m; sourceTree = "<group>"; };
+		D06BB545192F7D050045BAF3 /* Beacon1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Beacon1.jpg; sourceTree = "<group>"; };
+		D06BB546192F7D050045BAF3 /* Beacon2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Beacon2.jpg; sourceTree = "<group>"; };
+		D06BB547192F7D050045BAF3 /* Beacon3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Beacon3.jpg; sourceTree = "<group>"; };
+		D06BB54B192F7EFE0045BAF3 /* avatar_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar_01.png; sourceTree = "<group>"; };
+		D06BB54D192F82230045BAF3 /* Beacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beacon.h; sourceTree = "<group>"; };
+		D06BB54E192F82230045BAF3 /* Beacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beacon.m; sourceTree = "<group>"; };
 		D06DBD711922119600C84628 /* GRetail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GRetail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06DBD741922119600C84628 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D06DBD761922119600C84628 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -146,6 +160,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D06BB543192F7D050045BAF3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D06BB544192F7D050045BAF3 /* Beacons */,
+				D06BB54B192F7EFE0045BAF3 /* avatar_01.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		D06BB544192F7D050045BAF3 /* Beacons */ = {
+			isa = PBXGroup;
+			children = (
+				D06BB545192F7D050045BAF3 /* Beacon1.jpg */,
+				D06BB546192F7D050045BAF3 /* Beacon2.jpg */,
+				D06BB547192F7D050045BAF3 /* Beacon3.jpg */,
+			);
+			path = Beacons;
+			sourceTree = "<group>";
+		};
 		D06DBD681922119600C84628 = {
 			isa = PBXGroup;
 			children = (
@@ -192,11 +225,16 @@
 		D06DBD7A1922119600C84628 /* GRetail */ = {
 			isa = PBXGroup;
 			children = (
+				D06BB543192F7D050045BAF3 /* Images */,
 				D06DBDE41922310E00C84628 /* GRetail.entitlements */,
 				D06DBDAC19221A7900C84628 /* HomeViewController.h */,
 				D06DBDAD19221A7900C84628 /* HomeViewController.m */,
+				D06BB53F192F7A1A0045BAF3 /* BeaconDetailsTableViewCell.h */,
+				D06BB540192F7A1A0045BAF3 /* BeaconDetailsTableViewCell.m */,
 				D04BD922192B9C3300F30330 /* WebViewController.h */,
 				D04BD923192B9C3300F30330 /* WebViewController.m */,
+				D06BB54D192F82230045BAF3 /* Beacon.h */,
+				D06BB54E192F82230045BAF3 /* Beacon.m */,
 				D06DBD831922119600C84628 /* AppDelegate.h */,
 				D06DBD841922119600C84628 /* AppDelegate.m */,
 				D06DBD861922119600C84628 /* Main_iPhone.storyboard */,
@@ -406,10 +444,14 @@
 				D06DBDB419221BB000C84628 /* UserContext.plist in Resources */,
 				D06DBD8B1922119600C84628 /* Main_iPad.storyboard in Resources */,
 				D06DBD901922119600C84628 /* Images.xcassets in Resources */,
+				D06BB54A192F7D050045BAF3 /* Beacon3.jpg in Resources */,
+				D06BB548192F7D050045BAF3 /* Beacon1.jpg in Resources */,
 				D06DBD881922119600C84628 /* Main_iPhone.storyboard in Resources */,
 				D06DBD7F1922119600C84628 /* InfoPlist.strings in Resources */,
+				D06BB54C192F7EFE0045BAF3 /* avatar_01.png in Resources */,
 				D06DBDCE19221C6100C84628 /* DataModels.bundle in Resources */,
 				D06DBDD219221C6100C84628 /* rules.txt in Resources */,
+				D06BB549192F7D050045BAF3 /* Beacon2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +474,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D06DBD851922119600C84628 /* AppDelegate.m in Sources */,
+				D06BB541192F7A1A0045BAF3 /* BeaconDetailsTableViewCell.m in Sources */,
 				D06DBD811922119600C84628 /* main.m in Sources */,
+				D06BB54F192F82230045BAF3 /* Beacon.m in Sources */,
 				D06DBDAE19221A7900C84628 /* HomeViewController.m in Sources */,
 				D04BD924192B9C3300F30330 /* WebViewController.m in Sources */,
 			);

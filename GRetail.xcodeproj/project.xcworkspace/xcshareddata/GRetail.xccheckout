@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>36BFC8FE-15C1-4218-A16D-5AEB7DFA0650</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GRetail</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FC951941-805D-45AD-BCD8-D2895499136E</key>
+		<string>https://github.com/GSPANN-M/GRetail-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GRetail.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FC951941-805D-45AD-BCD8-D2895499136E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/GSPANN-M/GRetail-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FC951941-805D-45AD-BCD8-D2895499136E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FC951941-805D-45AD-BCD8-D2895499136E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GRetail</string>
+		</dict>
+	</array>
+</dict>
+</plist>
