@@ -575,7 +575,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = GRetail/GRetail.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ram Awadhesh Sharan (VGU7P5E9UJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Common.embeddedframework",
@@ -589,7 +590,7 @@
 				GCC_PREFIX_HEADER = "GRetail/GRetail-Prefix.pch";
 				INFOPLIST_FILE = "GRetail/GRetail-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "828BF55F-C3AB-42AB-803A-4E3C557E1946";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -601,7 +602,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = GRetail/GRetail.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ram Awadhesh Sharan (VGU7P5E9UJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Common.embeddedframework",
@@ -615,7 +617,7 @@
 				GCC_PREFIX_HEADER = "GRetail/GRetail-Prefix.pch";
 				INFOPLIST_FILE = "GRetail/GRetail-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "828BF55F-C3AB-42AB-803A-4E3C557E1946";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
