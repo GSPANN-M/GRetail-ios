@@ -38,7 +38,14 @@
     
     self.visitManager = [FYXVisitManager new];
     self.visitManager.delegate = self;
-    [self.visitManager start];
+    
+    NSMutableDictionary *options = [NSMutableDictionary new];
+//    [options setObject:[NSNumber numberWithInt:5] forKey:FYXVisitOptionDepartureIntervalInSecondsKey];
+//    [options setObject:[NSNumber numberWithInt:FYXSightingOptionSignalStrengthWindowNone] forKey:FYXSightingOptionSignalStrengthWindowKey];
+    [options setObject:[NSNumber numberWithInt:-60] forKey:FYXVisitOptionArrivalRSSIKey];
+    [options setObject:[NSNumber numberWithInt:-70] forKey:FYXVisitOptionDepartureRSSIKey];
+    
+    [self.visitManager startWithOptions:options];
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self selector:@selector(handleLocalNotifications:) name:@"handleLocalNotifications" object:Nil];
@@ -209,6 +216,8 @@
     // this will be invoked when an authorized transmitter has not been sighted for some time
     NSLog(@"I left the proximity of a Gimbal Beacon!!!! %@", visit.transmitter.name);
     NSLog(@"I was around the beacon for %f seconds", visit.dwellTime);
+    [self.beacons removeAllObjects];
+    [self.beaconsTableView reloadData];
 }
 
 -(void) didReceiveNotification: (QLContentNotification *)notification
