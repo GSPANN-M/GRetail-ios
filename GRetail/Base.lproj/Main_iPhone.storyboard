@@ -122,9 +122,12 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ddI-uI-QM2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ue2-kg-bM1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Ue2-kg-bM1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.069475635889999998" green="0.57249540089999995" blue="0.99851828809999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
