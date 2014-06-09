@@ -23,6 +23,9 @@
 @synthesize urlToOpen;
 @synthesize beaconsTableView;
 @synthesize beacons;
+@synthesize consoleTxtView, clearButtonView;
+@synthesize lblNoBeacons;
+@synthesize activityIndicatorNoBeacons;
 
 - (void)viewDidLoad
 {
@@ -30,6 +33,20 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.title = @"Beacons";
+    
+    UIButton *clearTextViewButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [clearTextViewButton setTitle:@"Clear" forState:UIControlStateNormal];
+    [clearTextViewButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    clearTextViewButton.titleLabel.font = [UIFont fontWithName: @"Helvetica" size: 8];
+    clearTextViewButton.titleLabel.textAlignment = UITextAlignmentCenter;
+    [clearTextViewButton setBackgroundColor:[UIColor whiteColor]];
+    clearTextViewButton.clipsToBounds = YES;
+    [clearTextViewButton.layer setCornerRadius:4.0f];
+    clearTextViewButton.frame = CGRectMake((self.clearButtonView.frame.size.width - 30), 2, 27, 10);
+    
+    [clearTextViewButton addTarget:self action:@selector(clearConsoleView:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.clearButtonView addSubview:clearTextViewButton];
     
     [self initializeTransmitters];
     
@@ -40,15 +57,17 @@
     self.visitManager.delegate = self;
     
     NSMutableDictionary *options = [NSMutableDictionary new];
-//    [options setObject:[NSNumber numberWithInt:5] forKey:FYXVisitOptionDepartureIntervalInSecondsKey];
-//    [options setObject:[NSNumber numberWithInt:FYXSightingOptionSignalStrengthWindowNone] forKey:FYXSightingOptionSignalStrengthWindowKey];
     [options setObject:[NSNumber numberWithInt:-60] forKey:FYXVisitOptionArrivalRSSIKey];
     [options setObject:[NSNumber numberWithInt:-70] forKey:FYXVisitOptionDepartureRSSIKey];
-    
     [self.visitManager startWithOptions:options];
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self selector:@selector(handleLocalNotifications:) name:@"handleLocalNotifications" object:Nil];
+}
+
+-(void) clearConsoleView:(id) sender{
+    
+    [self.consoleTxtView setText:@""];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,7 +80,7 @@
 
 - (void)initializeTransmitters {
     // Re-create the transmitters container array
-    //[self showNoTransmittersView];
+    [self showNoTransmittersView];
     @synchronized(self.beacons){
         if (self.beacons == nil) {
             self.beacons = [NSMutableArray new];
@@ -69,6 +88,18 @@
         // Always reload the table (even if the transmitter list didn't change)
         [self.beaconsTableView reloadData];
     }
+}
+
+- (void)showNoTransmittersView {
+    
+    [self.lblNoBeacons setHidden:NO];
+    [self.activityIndicatorNoBeacons startAnimating];
+}
+
+- (void)hideNoBeaconsView {
+    
+    [self.lblNoBeacons setHidden:YES];
+    [self.activityIndicatorNoBeacons stopAnimating];
 }
 
 - (Beacon *)beaconForID:(NSString *)ID {
@@ -83,6 +114,9 @@
 - (void)addBeacon: (Beacon *)beacon{
     @synchronized(self.beacons){
         [self.beacons addObject:beacon];
+        if([self.beacons count] == 1){
+            [self hideNoBeaconsView];
+        }
     }
 }
 
@@ -135,6 +169,7 @@
 
 - (void)didArrive:(FYXVisit *)visit;
 {
+    [self.consoleTxtView setText:[self.consoleTxtView.text stringByAppendingString:[NSString stringWithFormat:@"Arrived at Gimbal Beacon - %@\n", visit.transmitter.name]]];
     // this will be invoked when an authorized transmitter is sighted for the first time
     NSLog(@"I arrived at a Gimbal Beacon!!! %@", visit.transmitter.name);
     
@@ -168,6 +203,7 @@
 
 - (void)receivedSighting:(FYXVisit *)visit updateTime:(NSDate *)updateTime RSSI:(NSNumber *)RSSI;
 {
+    
     // this will be invoked when an authorized transmitter is sighted during an on-going visit
     //NSLog(@"I received a sighting!!! %@", visit.transmitter.name);
     Beacon *beacon = [self beaconForID:visit.transmitter.identifier];
@@ -214,10 +250,14 @@
 - (void)didDepart:(FYXVisit *)visit;
 {
     // this will be invoked when an authorized transmitter has not been sighted for some time
+    [self.consoleTxtView setText:[self.consoleTxtView.text stringByAppendingString:[NSString stringWithFormat:@"Left Gimbal Beacon - %@\nBeacon was in proximity for %f seconds\n", visit.transmitter.name, visit.dwellTime]]];
     NSLog(@"I left the proximity of a Gimbal Beacon!!!! %@", visit.transmitter.name);
     NSLog(@"I was around the beacon for %f seconds", visit.dwellTime);
     [self.beacons removeAllObjects];
     [self.beaconsTableView reloadData];
+    if ([self.beacons count] == 0) {
+        [self showNoTransmittersView];
+    }
 }
 
 -(void) didReceiveNotification: (QLContentNotification *)notification
@@ -301,6 +341,13 @@
 //        }
     }
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] init];
+    
+    return view;
 }
 
 @end

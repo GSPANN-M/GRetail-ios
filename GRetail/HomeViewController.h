@@ -23,6 +23,10 @@
 @property (nonatomic) QLContentConnector *contentConnector;
 @property (strong, nonatomic) NSString *urlToOpen;
 @property (weak, nonatomic) IBOutlet UITableView *beaconsTableView;
+@property (weak, nonatomic) IBOutlet UITextView *consoleTxtView;
+@property (weak, nonatomic) IBOutlet UIView *clearButtonView;
+@property (weak, nonatomic) IBOutlet UILabel *lblNoBeacons;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorNoBeacons;
 -(void)handleLocalNotifications : (NSNotification *)notification;
 
 @end
