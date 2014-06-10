@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import <ContextCore/QLContextCoreConnector.h>
-#import <ContextLocation/QLPlaceEvent.h>
-#import <ContextLocation/QLPlace.h>
 #import <ContextCore/QLPushNotificationsConnector.h>
 #import <FYX/FYXLogging.h>
 #import "HomeViewController.h"
@@ -32,9 +30,6 @@
          NSLog(@"Failed to initialize gimbal %@", error);
      }];
     
-    self.placeConnector = [[QLContextPlaceConnector alloc] init];
-    self.placeConnector.delegate = self;
-    
     [QLPushNotificationsConnector didFinishLaunchingWithOptions:launchOptions];
     [QLPushNotificationsConnector registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
     
@@ -43,7 +38,6 @@
         // Set icon badge number to zero
         application.applicationIconBadgeNumber = 0;
     }
-    
     return YES;
 }
 							
@@ -87,11 +81,6 @@
 {
     // this will be called if the service has failed to start
     NSLog(@"%@", error);
-}
-
-- (void)didGetPlaceEvent:(QLPlaceEvent *)placeEvent
-{
-    NSLog(@"did get place event %@", [placeEvent place].name);
 }
 
 #pragma mark - Gimbal SDK related Methods

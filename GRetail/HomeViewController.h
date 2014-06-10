@@ -17,10 +17,14 @@
 #import <ContextCore/QLContentConnector.h>
 #import <ContextCore/QLContent.h>
 #import <QuartzCore/QuartzCore.h>
+#import <ContextLocation/QLContextPlaceConnector.h>
+#import <ContextLocation/QLPlaceEvent.h>
+#import <ContextLocation/QLPlace.h>
 
-@interface HomeViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIApplicationDelegate, UIAlertViewDelegate, UIActionSheetDelegate, FYXiBeaconVisitDelegate, FYXVisitDelegate>
+@interface HomeViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIApplicationDelegate, UIAlertViewDelegate, UIActionSheetDelegate, FYXiBeaconVisitDelegate, FYXVisitDelegate, QLContextPlaceConnectorDelegate>
 
 @property (nonatomic) QLContentConnector *contentConnector;
+@property (nonatomic) QLContextPlaceConnector *placeConnector;
 @property (strong, nonatomic) NSString *urlToOpen;
 @property (weak, nonatomic) IBOutlet UITableView *beaconsTableView;
 @property (weak, nonatomic) IBOutlet UITextView *consoleTxtView;
