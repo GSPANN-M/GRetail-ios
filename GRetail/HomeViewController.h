@@ -21,16 +21,19 @@
 #import <ContextLocation/QLPlaceEvent.h>
 #import <ContextLocation/QLPlace.h>
 
-@interface HomeViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIApplicationDelegate, UIAlertViewDelegate, UIActionSheetDelegate, FYXiBeaconVisitDelegate, FYXVisitDelegate, QLContextPlaceConnectorDelegate>
+@interface HomeViewController : UIViewController<UIApplicationDelegate, UIAlertViewDelegate, UIActionSheetDelegate, UIWebViewDelegate, FYXiBeaconVisitDelegate, FYXVisitDelegate, QLContextPlaceConnectorDelegate>
 
 @property (nonatomic) QLContentConnector *contentConnector;
 @property (nonatomic) QLContextPlaceConnector *placeConnector;
 @property (strong, nonatomic) NSString *urlToOpen;
-@property (weak, nonatomic) IBOutlet UITableView *beaconsTableView;
-@property (weak, nonatomic) IBOutlet UITextView *consoleTxtView;
-@property (weak, nonatomic) IBOutlet UIView *clearButtonView;
-@property (weak, nonatomic) IBOutlet UILabel *lblNoBeacons;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorNoBeacons;
+//@property (weak, nonatomic) IBOutlet UITableView *beaconsTableView;
+//@property (weak, nonatomic) IBOutlet UITextView *consoleTxtView;
+//@property (weak, nonatomic) IBOutlet UIView *clearButtonView;
+//@property (weak, nonatomic) IBOutlet UILabel *lblNoBeacons;
+//@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorNoBeacons;
+@property (weak, nonatomic) IBOutlet UIWebView *webViewForCommunicationURL;
+@property (retain, nonatomic) NSURL *urlforWebView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 -(void)handleLocalNotifications : (NSNotification *)notification;
 
 @end
