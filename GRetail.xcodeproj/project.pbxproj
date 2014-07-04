@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D02693161966C32C00AB3DCE /* kohls-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D02693151966C32C00AB3DCE /* kohls-logo.png */; };
 		D04BD924192B9C3300F30330 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04BD923192B9C3300F30330 /* WebViewController.m */; };
 		D06BB541192F7A1A0045BAF3 /* BeaconDetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D06BB540192F7A1A0045BAF3 /* BeaconDetailsTableViewCell.m */; };
 		D06BB548192F7D050045BAF3 /* Beacon1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D06BB545192F7D050045BAF3 /* Beacon1.jpg */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D02693151966C32C00AB3DCE /* kohls-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kohls-logo.png"; sourceTree = "<group>"; };
 		D04BD922192B9C3300F30330 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		D04BD923192B9C3300F30330 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		D06BB53F192F7A1A0045BAF3 /* BeaconDetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconDetailsTableViewCell.h; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		D06BB543192F7D050045BAF3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D02693151966C32C00AB3DCE /* kohls-logo.png */,
 				D06BB544192F7D050045BAF3 /* Beacons */,
 				D06BB54B192F7EFE0045BAF3 /* avatar_01.png */,
 			);
@@ -449,6 +452,7 @@
 				D06DBD881922119600C84628 /* Main_iPhone.storyboard in Resources */,
 				D06DBD7F1922119600C84628 /* InfoPlist.strings in Resources */,
 				D06BB54C192F7EFE0045BAF3 /* avatar_01.png in Resources */,
+				D02693161966C32C00AB3DCE /* kohls-logo.png in Resources */,
 				D06DBDCE19221C6100C84628 /* DataModels.bundle in Resources */,
 				D06DBDD219221C6100C84628 /* rules.txt in Resources */,
 				D06BB549192F7D050045BAF3 /* Beacon2.jpg in Resources */,
