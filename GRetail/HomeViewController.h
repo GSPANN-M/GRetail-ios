@@ -34,6 +34,8 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webViewForCommunicationURL;
 @property (retain, nonatomic) NSURL *urlforWebView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+@property (retain, nonatomic) UIView *overlayView;
+
 -(void)handleLocalNotifications : (NSNotification *)notification;
 
 @end

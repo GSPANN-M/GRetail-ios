@@ -29,6 +29,7 @@
 @synthesize webViewForCommunicationURL;
 @synthesize activityIndicatorView;
 @synthesize urlforWebView;
+@synthesize overlayView;
 
 const CGFloat MAX_RSSI_NUMBER = -20;
 const CGFloat MIN_RSSI_NUMBER = -70;
@@ -41,6 +42,11 @@ const CGFloat EXTRAPOLATION_FACTOR = MAX_PROGRESSBAR_VALUE/(MAX_RSSI_NUMBER-MIN_
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.title = @"GSPANN Retail";
+    
+    self.overlayView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.overlayView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    [self.navigationController.view addSubview:self.overlayView];
+    self.overlayView.hidden = YES;
     
     self.webViewForCommunicationURL.delegate = self;
     self.urlforWebView = [NSURL URLWithString:@"http://ec2-54-213-80-60.us-west-2.compute.amazonaws.com/gretail/theme-a/"];
@@ -75,6 +81,7 @@ const CGFloat EXTRAPOLATION_FACTOR = MAX_PROGRESSBAR_VALUE/(MAX_RSSI_NUMBER-MIN_
     NSMutableDictionary *options = [NSMutableDictionary new];
     [options setObject:[NSNumber numberWithInt:-60] forKey:FYXVisitOptionArrivalRSSIKey];
     [options setObject:[NSNumber numberWithInt:-70] forKey:FYXVisitOptionDepartureRSSIKey];
+    [options setObject:[NSNumber numberWithInt:3] forKey:FYXVisitOptionDepartureIntervalInSecondsKey];
     [self.visitManager startWithOptions:options];
     
     [[NSNotificationCenter defaultCenter]
@@ -352,11 +359,13 @@ const CGFloat EXTRAPOLATION_FACTOR = MAX_PROGRESSBAR_VALUE/(MAX_RSSI_NUMBER-MIN_
 
 -(void) webViewDidStartLoad:(UIWebView *)webView{
     
+    self.overlayView.hidden = NO;
     [self.activityIndicatorView startAnimating];
 }
 
 -(void) webViewDidFinishLoad:(UIWebView *)webView{
     
+    self.overlayView.hidden = YES;
     [self.activityIndicatorView stopAnimating];
 }
 
