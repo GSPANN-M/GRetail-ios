@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>FEATURE_NAME</key>
+	<string>In-store Deals</string>
 	<key>PRODUCTION_API_KEY</key>
 	<string>42bb637c-c02f-40b2-b99c-747d0f5fac6c</string>
 </dict>

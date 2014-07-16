@@ -301,8 +301,8 @@ const CGFloat EXTRAPOLATION_FACTOR = MAX_PROGRESSBAR_VALUE/(MAX_RSSI_NUMBER-MIN_
             self.urlToOpen = [notificationBodyParts objectAtIndex:1];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:notificationObject.alertAction
                                                             message:[notificationBodyParts objectAtIndex:0]
-                                                           delegate:self cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:@"Goto Link", nil];
+                                                           delegate:self cancelButtonTitle:@"Ignore"
+                                                  otherButtonTitles:@"Show Me", nil];
             [alert show];
         } else if ([notificationType isEqualToString:@"Geofence"]) {
             UIAlertView *alert =[[UIAlertView alloc] initWithTitle:notificationObject.alertAction message:notificationObject.alertBody delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -316,7 +316,7 @@ const CGFloat EXTRAPOLATION_FACTOR = MAX_PROGRESSBAR_VALUE/(MAX_RSSI_NUMBER-MIN_
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    if([title isEqualToString:@"Goto Link"])
+    if([title isEqualToString:@"Show Me"])
     {
 //        WebViewController* objWebVC = [[UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil] instantiateViewControllerWithIdentifier:@"WebViewController"];
 //        [objWebVC setUrlforWebView:[NSURL URLWithString:self.urlToOpen]];
