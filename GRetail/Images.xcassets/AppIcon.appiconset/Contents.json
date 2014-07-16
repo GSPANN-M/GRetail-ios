@@ -3,37 +3,37 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "GRetailAppIcon29px.png",
+      "filename" : "GRetail29pt.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "GRetailAppIcon29px@2x.png",
+      "filename" : "GRetail29pt@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "GRetailAppIcon40px@2x.png",
+      "filename" : "GRetail40pt@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "57x57",
       "idiom" : "iphone",
-      "filename" : "GRetailAppIcon57px.png",
+      "filename" : "GRetail57pt.png",
       "scale" : "1x"
     },
     {
       "size" : "57x57",
       "idiom" : "iphone",
-      "filename" : "GRetailAppIcon57px@2x.png",
+      "filename" : "GRetail57pt@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "GRetailAppIcon60px@2x.png",
+      "filename" : "GRetail.png",
       "scale" : "2x"
     },
     {
@@ -59,13 +59,13 @@
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "GRetailAppIcon76px.png",
+      "filename" : "G-Retail76x76.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "GRetailAppIcon76px@2x.png",
+      "filename" : "G-Retail152x152.png",
       "scale" : "2x"
     }
   ],

@@ -73,10 +73,8 @@ const CGFloat EXTRAPOLATION_FACTOR = MAX_PROGRESSBAR_VALUE/(MAX_RSSI_NUMBER-MIN_
     self.visitManager.delegate = self;
     
     NSMutableDictionary *options = [NSMutableDictionary new];
-    [options setObject:[NSNumber numberWithInt:-70] forKey:FYXVisitOptionArrivalRSSIKey];
-    [options setObject:[NSNumber numberWithInt:-75] forKey:FYXVisitOptionDepartureRSSIKey];
-    [options setObject:[NSNumber numberWithInt:3] forKey:FYXVisitOptionDepartureIntervalInSecondsKey];
-    [options setObject:[NSNumber numberWithInt:FYXSightingOptionSignalStrengthWindowNone] forKey:FYXSightingOptionSignalStrengthWindowKey];
+    [options setObject:[NSNumber numberWithInt:-60] forKey:FYXVisitOptionArrivalRSSIKey];
+    [options setObject:[NSNumber numberWithInt:-70] forKey:FYXVisitOptionDepartureRSSIKey];
     [self.visitManager startWithOptions:options];
     
     [[NSNotificationCenter defaultCenter]
@@ -221,8 +219,8 @@ const CGFloat EXTRAPOLATION_FACTOR = MAX_PROGRESSBAR_VALUE/(MAX_RSSI_NUMBER-MIN_
             UILocalNotification *localNotification = [[UILocalNotification alloc] init];
             localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval:1];
             localNotification.alertAction = communicationContent.title;
-            localNotification.alertBody = [NSString stringWithFormat:@"%@\n%@",communicationContent.contentDescription, communicationContent.contentUrl];
-//            localNotification.alertBody = [NSString stringWithFormat:@"%@",communicationContent.contentDescription];
+//            localNotification.alertBody = [NSString stringWithFormat:@"%@\n%@",communicationContent.contentDescription, communicationContent.contentUrl];
+            localNotification.alertBody = [NSString stringWithFormat:@"%@",communicationContent.contentDescription];
             localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
             NSDictionary *notificationDirectory = [NSDictionary dictionaryWithObject:@"Communication" forKey:@"NotificationType"];
             [localNotification setUserInfo:notificationDirectory];
