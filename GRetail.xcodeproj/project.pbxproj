@@ -557,7 +557,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ram Awadhesh Sharan (VGU7P5E9UJ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: GSPANN Technologies, Inc. (2YVWH85J83)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ram Awadhesh Sharan (VGU7P5E9UJ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -576,7 +576,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "828BF55F-C3AB-42AB-803A-4E3C557E1946";
+				PROVISIONING_PROFILE = "5A5ABF4F-DB71-4E1F-A6D7-D11E9D67D9A5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -598,7 +598,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ram Awadhesh Sharan (VGU7P5E9UJ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: GSPANN Technologies, Inc. (2YVWH85J83)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ram Awadhesh Sharan (VGU7P5E9UJ)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -610,7 +610,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "828BF55F-C3AB-42AB-803A-4E3C557E1946";
+				PROVISIONING_PROFILE = "5A5ABF4F-DB71-4E1F-A6D7-D11E9D67D9A5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -623,8 +623,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = GRetail/GRetail.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ram Awadhesh Sharan (VGU7P5E9UJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ram Awadhesh Sharan (VGU7P5E9UJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Common.embeddedframework",
@@ -639,7 +639,7 @@
 				INFOPLIST_FILE = "GRetail/GRetail-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "828BF55F-C3AB-42AB-803A-4E3C557E1946";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -651,8 +651,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = GRetail/GRetail.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ram Awadhesh Sharan (VGU7P5E9UJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ram Awadhesh Sharan (VGU7P5E9UJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Common.embeddedframework",
@@ -667,7 +667,7 @@
 				INFOPLIST_FILE = "GRetail/GRetail-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "828BF55F-C3AB-42AB-803A-4E3C557E1946";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
